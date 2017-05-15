@@ -5955,8 +5955,8 @@ var Rnd = function (_Component) {
     key: 'updatePosition',
     value: function updatePosition(position) {
       if (this.props.scaleFactor) {
-        position.x *= this.props.scaleFactor;
-        position.y *= this.props.scaleFactor;
+        position.x /= this.props.scaleFactor;
+        position.y /= this.props.scaleFactor;
       }
       this.draggable.setState(position);
     }
