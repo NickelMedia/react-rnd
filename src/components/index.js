@@ -183,7 +183,7 @@ export default class Rnd extends Component {
 
   onDrag(e: SyntheticMouseEvent | SyntheticTouchEvent, data: DraggableData) {
     if (this.props.onDrag) {
-      this.props.onDrag(e, data);
+      return this.props.onDrag(e, data);
     }
   }
 
