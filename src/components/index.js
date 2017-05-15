@@ -89,6 +89,7 @@ type Props = {
   className?: string;
   style?: any;
   children?: any,
+  scaleFactor?:number,
   enableResizing?: Enable,
   extendsProps?: any,
   resizeHandlerClasses?: HandlerClasses,
@@ -306,6 +307,10 @@ export default class Rnd extends Component {
   }
 
   updatePosition(position: Position) {
+    if (this.props.scaleFactor){
+      position.x *= this.props.scaleFactor
+      position.y *= this.props.scaleFactor
+    }
     this.draggable.setState(position);
   }
 
