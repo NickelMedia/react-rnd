@@ -98,6 +98,7 @@ type Props = {
   maxWidth?: number,
   minHeight?: number,
   minWidth?: number,
+  scaleFactor?:number,
   dragAxis?: 'x' | 'y' | 'both' | 'none',
 }
 
@@ -183,7 +184,7 @@ export default class Rnd extends Component {
 
   onDrag(e: SyntheticMouseEvent | SyntheticTouchEvent, data: DraggableData) {
     if (this.props.onDrag) {
-      return this.props.onDrag(e, data);
+      this.props.onDrag(e, data);
     }
   }
 
@@ -322,6 +323,7 @@ export default class Rnd extends Component {
         onStart={this.onDragStart}
         onDrag={this.onDrag}
         onStop={this.onDragStop}
+        scaleFactor={this.props.scaleFactor}
         axis={this.props.dragAxis}
         grid={this.props.dragGrid}
         bounds={this.props.bounds ? this.state.bounds : undefined}

@@ -76,7 +76,7 @@
     ]
   },
   "dependencies": {
-    "react-draggable": "^2.2.3",
+    "react-draggable": "NickelMedia/react-draggable",
     "react-resizable-box": "^2.0.3"
   },
   "files": [
